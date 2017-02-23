@@ -1,0 +1,76 @@
+
+<div class="test">
+This is VUE.js test module.
+<div id="app">
+  {{ message }}
+</div>
+
+<div id="app-2">
+  <span v-bind:title="message">
+    Hover your mouse over me for a few seconds to see my dynamically bound title!
+  </span>
+</div>
+</div>
+
+<div id="app-5">
+  <p>{{ message }}</p>
+  <button v-on:click="reverseMessage">Reverse Message</button>
+</div>
+
+
+
+
+<div id="app-7">
+  <ol>
+    <!-- Now we provide each todo-item with the todo object    -->
+    <!-- it's representing, so that its content can be dynamic -->
+    <todo-item v-for="item in groceryList" v-bind:todo="item"></todo-item>
+  </ol>
+</div>
+
+
+<script>
+Vue.component('todo-item', {
+  props: ['todo'],
+  template: '<li>{{ todo.text }}</li>'
+})
+
+var app7 = new Vue({
+  el: '#app-7',
+  data: {
+    groceryList: [
+      { text: 'Vegetables' },
+      { text: 'Cheese' },
+      { text: 'Whatever else humans are supposed to eat' }
+    ]
+  }
+})
+
+var app = new Vue({
+  el: '#app',
+  data: {
+    message: 'Hello Vue!'
+  }
+})
+
+var app2 = new Vue({
+  el: '#app-2',
+  data: {
+    message: 'You loaded this page on ' + new Date()
+  }
+});
+
+var app5 = new Vue({
+  el: '#app-5',
+  data: {
+    message: 'Hello Vue.js!'
+  },
+  methods: {
+    reverseMessage: function () {
+      this.message = this.message.split('').reverse().join('');
+    }
+  }
+});
+
+
+</script>
