@@ -23,6 +23,11 @@ class Welcome extends CI_Controller {
 		$this->load->view('welcome_message');
 	}
 
+	public function angular()
+	{
+		$this->load->view('angular');
+	}
+
 	public function view()
 	{
 		// echo 'view';
