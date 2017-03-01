@@ -25,7 +25,7 @@ class Welcome extends CI_Controller {
 
 	public function view()
 	{
-		echo 'view';
+		// echo 'view';
 
 		$this->load->view('view');
 	}
