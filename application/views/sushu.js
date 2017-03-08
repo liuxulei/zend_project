@@ -1,6 +1,7 @@
 function get_primes(arr) {
 
 	var res = arr.filter(function(value){
+		//复习了一下闭包
 	  	for(var i =2 ; i< value; i++){(function(e){
 	  		if(value/i !== (value/i).parseInt){
 	      		return false;
